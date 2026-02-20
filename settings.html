@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compute · settings</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/gp.css">
+</head>
+<body class="bg-light">
+
+    <!-- offcanvas menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menuCanvas" aria-labelledby="menuCanvasLabel">
+        <div class="offcanvas-header px-4 pt-4">
+            <h5 class="offcanvas-title fw-semibold" id="menuCanvasLabel">☰ menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body px-4">
+            <div class="d-flex flex-column gap-4">
+                <div class="border-bottom pb-3">
+                    <p class="fw-medium mb-2"> performance</p>
+                    <div class="bg-white p-3 rounded-0 border text-center text-secondary small">
+                        <a href="performance.html" class="text-decoration-none text-dark">view full performance →</a>
+                    </div>
+                </div>
+                <div class="border-bottom pb-3">
+                    <p class="fw-medium mb-2"> cgpa summary</p>
+                    <p class="text-secondary small" id="menuCGPA">overall cgpa: 0.00</p>
+                </div>
+                           <!-- saved sessions 
+                <div class="border-bottom pb-3">
+                    <p class="fw-medium mb-2">saved sessions</p>
+                    <p class="text-secondary small">— no saved sessions —</p>
+                </div>-->
+                <div class="border-bottom pb-3">
+    <p class="fw-medium mb-2">what if?</p>
+    <p class="text-secondary small"><a href="whatif.html" class="text-decoration-none text-dark">simulate future grades →</a></p>
+</div>
+ <!-- DARK MODE TOGGLE - add this before settings -->
+            <div class="border-bottom pb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="fw-medium mb-0"> dark mode</p>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input rounded-0" type="checkbox" id="darkModeToggle" style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+                <div>
+                    <p class="fw-medium mb-2"> settings</p>
+                    <p class="text-secondary small"><a href="settings.html" class="text-decoration-none text-dark">manage preferences →</a></p>
+                </div>
+                <div>
+    <p class="fw-medium mb-2"> about</p>
+    <p class="text-secondary small"><a href="about.html" class="text-decoration-none text-dark">privacy, contact & feedback →</a></p>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main container -->
+    <div class="container py-4 px-3 px-md-4" style="max-width: 900px;">
+
+        <!-- header -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn p-0 border-0 fs-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuCanvas" aria-controls="menuCanvas">
+                    ☰
+                </button>
+                <span class="fs-4 fw-light">settings</span>
+            </div>
+            <span class="bg-white px-4 py-2 border fw-semibold tracking-wide" style="letter-spacing: 0.3px;">
+                🔥 <span id="cgpaDisplay">0.00</span>
+            </span>
+        </div>
+
+        <!-- settings content -->
+        <div class="d-flex flex-column gap-4">
+
+            <!-- GRADING SCALE -->
+            <div class="bg-white p-4 border">
+                <h3 class="fs-5 fw-medium mb-3"> grading scale</h3>
+                <div class="d-flex flex-column gap-2">
+                    <div class="form-check">
+                        <input class="form-check-input rounded-0" type="radio" name="gradingScale" id="scale5point" value="5point" checked>
+                        <label class="form-check-label" for="scale5point">
+                            5-point (A=5, B=4, C=3, D=2, E=1, F=0) — Nigerian standard
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input rounded-0" type="radio" name="gradingScale" id="scale4point" value="4point">
+                        <label class="form-check-label" for="scale4point">
+                            4-point (A=4, B=3, C=2, D=1, F=0)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input rounded-0" type="radio" name="gradingScale" id="scaleCustom" value="custom">
+                        <label class="form-check-label" for="scaleCustom">
+                            custom (coming soon)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CREDIT RANGE -->
+            <div class="bg-white p-4 border">
+                <h3 class="fs-5 fw-medium mb-3"> credit unit range</h3>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <label class="form-label small text-secondary">minimum</label>
+                        <input type="number" class="form-control rounded-0 border sharp-input" id="minCredit" value="1" min="1" max="5">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label small text-secondary">maximum</label>
+                        <input type="number" class="form-control rounded-0 border sharp-input" id="maxCredit" value="6" min="2" max="15">
+                    </div>
+                </div>
+                <p class="text-secondary small mt-2">affects unit dropdown in semester pages</p>
+            </div>
+
+            <!-- DEFAULT GRADE -->
+            <div class="bg-white p-4 border">
+                <h3 class="fs-5 fw-medium mb-3"> default grade for new courses</h3>
+                <select class="form-select rounded-0 border sharp-input w-auto" id="defaultGrade">
+                    <option value="A">A</option>
+                    <option value="B" selected>B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <!-- DATA MANAGEMENT -->
+            <div class="bg-white p-4 border">
+                <h3 class="fs-5 fw-medium mb-3">data management</h3>
+                <div class="d-flex flex-column gap-2">
+                    <button class="btn btn-outline-dark rounded-0 py-2 border-1 text-start" id="exportData">
+                         export data (backup)
+                    </button>
+                    <button class="btn btn-outline-dark rounded-0 py-2 border-1 text-start" id="importData">
+                         import data (restore)
+                    </button>
+                    <div class="dropdown-divider my-2"></div>
+                    <button class="btn btn-outline-danger rounded-0 py-2 border-1 text-start" id="resetData">
+                        reset all data
+                    </button>
+                </div>
+            </div>
+
+            <!-- ABOUT -->
+            <div class="bg-white p-4 border">
+                <h3 class="fs-5 fw-medium mb-3"> about</h3>
+                <p class="small text-secondary mb-1">version 1.0</p>
+                <p class="small text-secondary mb-0">simple GPA calculator for Nigerian students</p>
+            </div>
+
+        </div>
+
+        <!-- back link -->
+        <div class="text-center mt-5 pt-3">
+            <a href="index.html" class="text-secondary text-decoration-none small">← back to years</a>
+        </div>
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
