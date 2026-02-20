@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compute</title>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/bootstrap-icons.min.css">
+
+
+<link rel="stylesheet" href="css/gp.css">
+</head>
+<body class="bg-light">
+
+    <!-- drawer-->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menuCanvas" aria-labelledby="menuCanvasLabel">
+        <div class="offcanvas-header px-4 pt-4">
+            <h5 class="offcanvas-title fw-semibold" id="menuCanvasLabel">☰ menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body px-4">
+            <div class="d-flex flex-column gap-4">
+                <!-- performance chart  -->
+              <div class="bg-white p-3 rounded-0 border text-center text-secondary small">
+    <a href="performance.html" class="text-decoration-none text-dark">view full performance →</a>
+</div>
+                <!-- cgpa summary -->
+               <div class="border-bottom pb-3">
+    <p class="fw-medium mb-2">cgpa summary</p>
+    <p class="text-secondary small" id="menuCGPA">overall cgpa: 0.00</p>
+</div>
+                <!-- saved sessions & settings 
+                <div class="border-bottom pb-3">
+                    <p class="fw-medium mb-2">saved sessions</p>
+                    <p class="text-secondary small">— no saved sessions —</p>
+                </div>-->
+
+<div class="border-bottom pb-3">
+    <p class="fw-medium mb-2"> what if?</p>
+    <p class="text-secondary small"><a href="what-if.html" class="text-decoration-none text-dark">simulate future grades →</a></p>
+</div>
+ <div class="border-bottom pb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="fw-medium mb-0"> dark mode</p>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input rounded-0" type="checkbox" id="darkModeToggle" style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+
+              <div>
+    <p class="fw-medium mb-2">settings</p>
+    <p class="text-secondary small"><a href="settings.html" class="text-decoration-none text-dark">manage preferences →</a></p>
+</div>
+<div>
+    <p class="fw-medium mb-2">about</p>
+    <p class="text-secondary small"><a href="about.html" class="text-decoration-none text-dark">privacy, contact & feedback →</a></p>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main container -->
+    <div class="container py-4 px-3 px-md-4" style="max-width: 900px;">
+              
+        <!-- header with menu button & cgpa pill -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <button class="btn p-0 border-0 fs-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuCanvas" aria-controls="menuCanvas">
+                ☰
+            </button>
+               <span class="bg-white px-4 py-2 border fw-semibold tracking-wide" style="letter-spacing: 0.3px;">
+                🔥 <span id="cgpaDisplay">0.00</span>
+            </span>
+        </div>
+        <div class="text-center">
+            <span class="" style="font-size: larger;"> real-time GP computer</span>
+        </div>
+        <!-- years & semesters-->
+        <div class="d-flex flex-column gap-5" id="yearsContainer">
+            <!-- years 1–7-->
+        </div>
+
+        <!-- add year button (sharp & subtle) -->
+        <div class="text-center mt-5 pt-3">
+            <button class="btn btn-outline-dark rounded-0 px-5 py-2 border-1 fw-light" id="addYearBtn" style="letter-spacing: 0.5px;">
+                + add year
+            </button>
+        </div>
+
+    </div>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/darkmode.js"></script>
+<script src="js/gp.js"></script>
+</body>
+</html>

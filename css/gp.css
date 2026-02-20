@@ -1,0 +1,270 @@
+
+
+* {
+    border-radius: 0 !important;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fc;
+    letter-spacing: -0.01em;
+}
+
+
+.year-header {
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: #1a1e2b;
+    margin-bottom: 1rem;
+    padding-left: 0.15rem;
+}
+
+
+.semester-pill {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border: 1px solid #dee2e6;
+    font-weight: 400;
+    color: #212529;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    width: 100%;               /* full width on mobile */
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.semester-pill:hover {
+    background: #f1f3f5;
+    border-color: #adb5bd;
+    cursor: pointer;
+}
+
+
+.semester-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .semester-row {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .semester-pill {
+        width: auto;
+        flex: 1;           
+    }
+}
+
+/* offcanvas custom */
+.offcanvas {
+    border-right: 1px solid #dee2e6 !important;
+}
+
+.offcanvas-header .btn-close {
+    filter: brightness(0.8);
+}
+
+/* add year button */
+#addYearBtn {
+    background: transparent;
+    color: #6c757d;
+    border-color: #ced4da;
+}
+
+#addYearBtn:hover {
+    background: #f1f3f5;
+    color: #000;
+}
+
+
+.tracking-wide {
+    letter-spacing: 0.3px;
+}
+
+
+#semesterList .bg-white {
+    transition: all 0.1s ease;
+}
+
+#semesterList .bg-white:hover {
+    background: #f8f9fa !important;
+    border-color: #adb5bd !important;
+}
+
+
+.year-header {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #495057;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+
+.form-check-input:checked {
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+    border-color: #212529;
+}
+
+#resetData:hover {
+    background-color: #dc3545;
+    color: white !important;
+    border-color: #dc3545 !important;
+}
+
+
+/* chart styling */
+#gpaChart {
+    max-height: 300px;
+    width: 100%;
+}
+
+/* smooth transitions */
+.bg-white {
+    transition: background-color 0.1s ease;
+}
+
+
+
+/* ========== DARK MODE ========== */
+body.dark-mode {
+    background-color: #1a1e2b !important;
+    color: #e9ecef;
+}
+
+/* cards and containers */
+body.dark-mode .bg-white,
+body.dark-mode .bg-light,
+body.dark-mode .offcanvas,
+body.dark-mode .card,
+body.dark-mode .dropdown-menu,
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #2d323e !important;
+    color: #e9ecef !important;
+    border-color: #495057 !important;
+}
+
+/* borders */
+body.dark-mode .border,
+body.dark-mode .border-top,
+body.dark-mode .border-bottom,
+body.dark-mode .border-start,
+body.dark-mode .border-end {
+    border-color: #495057 !important;
+}
+
+/* text colors */
+body.dark-mode .text-secondary,
+body.dark-mode .small.text-secondary {
+    color: #adb5bd !important;
+}
+
+body.dark-mode .text-dark {
+    color: #e9ecef !important;
+}
+
+/* links */
+body.dark-mode a,
+body.dark-mode .btn-link {
+    color: #e9ecef;
+}
+
+body.dark-mode a:hover {
+    color: #ffffff;
+}
+
+/* form inputs */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #1e222d !important;
+    border-color: #495057 !important;
+    color: #e9ecef !important;
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+    border-color: #6c757d !important;
+    box-shadow: none !important;
+}
+
+/* buttons */
+body.dark-mode .btn-outline-dark {
+    color: #e9ecef;
+    border-color: #6c757d;
+}
+
+body.dark-mode .btn-outline-dark:hover {
+    background-color: #e9ecef;
+    color: #1a1e2b !important;
+    border-color: #e9ecef;
+}
+
+body.dark-mode .btn-dark {
+    background-color: #e9ecef;
+    color: #1a1e2b;
+    border-color: #e9ecef;
+}
+
+/* semester pills */
+body.dark-mode .semester-pill {
+    background-color: #2d323e;
+    color: #e9ecef;
+    border-color: #495057;
+}
+
+body.dark-mode .semester-pill:hover {
+    background-color: #3a404d;
+    border-color: #6c757d;
+}
+
+/* offcanvas */
+body.dark-mode .offcanvas {
+    background-color: #2d323e !important;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* chart */
+body.dark-mode canvas {
+    background-color: #2d323e;
+}
+
+/* add year button */
+body.dark-mode #addYearBtn {
+    color: #adb5bd;
+    border-color: #495057;
+}
+
+body.dark-mode #addYearBtn:hover {
+    background-color: #3a404d;
+    color: #ffffff;
+}
+
+/* toggle switch */
+body.dark-mode .form-check-input {
+    background-color: #1e222d;
+    border-color: #6c757d;
+}
+
+body.dark-mode .form-check-input:checked {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+}
+
+/* cgpa pill stays visible */
+body.dark-mode .bg-white.px-4.py-2.border {
+    background-color: #2d323e !important;
+    color: #e9ecef !important;
+}
